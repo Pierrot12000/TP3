@@ -30,9 +30,8 @@ void Magasin::search(std::string name)
 		if (_produit[a].getname().compare(name) == 0) //si le nom recherché correspond a un element du tableau
 		{
 			z = true;
-			std::cout << "Le produit que vous cherchez est bien " << _produit[a].getname() << std::endl;
+			std::cout << "Il reste " << _produit[a].getqtt() << " " << _produit[a].getname() << " en stock, a un prix de " << _produit[a].getprix() << " euros" << std::endl;
 			std::cout << _produit[a].getdescription() << std::endl;
-			std::cout << "Il reste " << _produit[a].getqtt() << " produits en stock, a un prix de " << _produit[a].getprix() << " euros" << std::endl;
 		}
 	}
 	if (z == false)

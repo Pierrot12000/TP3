@@ -34,6 +34,6 @@ int Produit::setqtt(int nbr)
 
 std::ostream& operator <<(std::ostream& os, const Produit& produit)
 {
-	os << produit._name;
+	os << produit._name << std::endl;
 	return os;
 }

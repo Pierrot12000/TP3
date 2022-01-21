@@ -1,8 +1,5 @@
-﻿  Magasin.cpp
-C:\Users\Pierre\Desktop\TP3\TP3\Magasin.cpp(19,20): warning C4018: '<' : incompatibilité signed/unsigned
-C:\Users\Pierre\Desktop\TP3\TP3\Magasin.cpp(28,20): warning C4018: '<' : incompatibilité signed/unsigned
-C:\Users\Pierre\Desktop\TP3\TP3\Magasin.cpp(46,20): warning C4018: '<' : incompatibilité signed/unsigned
+﻿  Produit.cpp
   TP3.cpp
-C:\Users\Pierre\Desktop\TP3\TP3\TP3.cpp(9,107): warning C4305: 'argument' : troncation de 'double' à 'float'
+C:\Users\Pierre\Desktop\TP3\TP3\TP3.cpp(10,107): warning C4305: 'argument' : troncation de 'double' à 'float'
   Génération de code en cours...
   TP3.vcxproj -> C:\Users\Pierre\Desktop\TP3\TP3\Debug\TP3.exe
