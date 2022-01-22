@@ -48,7 +48,6 @@ std::ostream& operator <<(std::ostream& os, const Client& client)
 	{
 		os << copie[a].getname() << " * " << copie2[a] << std::endl;
 	}
-	
 	return os;
 }
 

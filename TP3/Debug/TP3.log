@@ -1,4 +1,9 @@
-﻿  Produit.cpp
+﻿  Magasin.cpp
+C:\Users\Pierre\Desktop\TP3\TP3\Magasin.cpp(19,20): warning C4018: '<' : incompatibilité signed/unsigned
+C:\Users\Pierre\Desktop\TP3\TP3\Magasin.cpp(28,20): warning C4018: '<' : incompatibilité signed/unsigned
+C:\Users\Pierre\Desktop\TP3\TP3\Magasin.cpp(45,20): warning C4018: '<' : incompatibilité signed/unsigned
+C:\Users\Pierre\Desktop\TP3\TP3\Magasin.cpp(62,20): warning C4018: '<' : incompatibilité signed/unsigned
+C:\Users\Pierre\Desktop\TP3\TP3\Magasin.cpp(71,20): warning C4018: '<' : incompatibilité signed/unsigned
   TP3.cpp
 C:\Users\Pierre\Desktop\TP3\TP3\TP3.cpp(10,107): warning C4305: 'argument' : troncation de 'double' à 'float'
   Génération de code en cours...
