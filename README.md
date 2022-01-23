@@ -30,6 +30,7 @@ Le constructeur par défaut de cette classe requiert un client et un identifiant
 Quand un client décide de passer commande, tout les articles dans sont panier sont supprimés et placés dans la commande. Est associé avec la commande une varaible qui permet d'avoir le status de celle ci : 
 - En cours de préparation
 - Commande expédiée
+
 L'opérateur "<<" a également été surchargé pour afficher facilement ce que contient une commande, a quel client elle appartient et quel est sont status.
 
 # Classe Magasin
