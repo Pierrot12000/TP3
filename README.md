@@ -2,7 +2,7 @@
 
 Réalisation d'un programme qui va faciliter la gestion de votre magasin, voici **EasyStore**
 
-## Explication du programme
+# Explication du programme
 
 De nombreuses classes sont déjà codés et prêtes à être utilisées:
 - Une classe pour chaque clients (Class Client)
@@ -13,18 +13,18 @@ De nombreuses classes sont déjà codés et prêtes à être utilisées:
 Je vais détailler par la suite l'utilisaiton de chaques classes, mais pour vous, tout ce que vous avez a faire c'est créer votre programme dans le main en utilisant les fonctions des classes.
 On notera que chaque client et chaque commande ont un identifiant unique, qu'il est important de conserver pour pouvoir utiliser le programme a bon escient
 
-## Classe Client
+# Classe Client
 
 Le constructeur par défaut de cette classe requiert un nom, un prénom et un identifiant unique de cette forme : `Client(std::string nom, std::string prenom, int id)`
 Quand un client est instancié, un panier de `Produits` est créé et lui est associé
 L'opérateur "<<" a été surchargé de manière a ce que on puisse afficher facilement le panier d'un client ainsi que les quantitées correspondant a chaque produit du panier
 
-## Classe Produit
+# Classe Produit
 
 Le constructeur par défaut de cette classe requiet un nom, une brève description, une quantitée disponible ainsi qu'un prix. Le tout se présente de la forme : Produit(std::string nom, std::string description, int quantite, float prix)
 L'opérateur "<<" a été surchargé de manière a afficher facilement le nom du produit
 
-## Classe Commande
+# Classe Commande
 
 Le constructeur par défaut de cette classe requiert un client et un identifiant unique de commande : `Commande(Client client, int identifiant)`
 Quand un client décide de passer commande, tout les articles dans sont panier sont supprimés et placés dans la commande. Est associé avec la commande une varaible qui permet d'avoir le status de celle ci : 
@@ -33,7 +33,7 @@ Quand un client décide de passer commande, tout les articles dans sont panier s
 
 L'opérateur "<<" a également été surchargé pour afficher facilement ce que contient une commande, a quel client elle appartient et quel est sont status.
 
-## Classe Magasin
+# Classe Magasin
 
 Le constructeur par défaut de cette classe prend en paramètre le nom du magasin, ce qui donne : Magasin(std::string nom)
 La classe magasin permet de tout faire : elle permet de placer les produits dans les paniers des client, de les retirer, de passer une commande, d'ajouter de nouveaux produits en stocks... Voici le détail pour s'en serir
