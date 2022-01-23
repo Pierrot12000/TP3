@@ -1,7 +1,7 @@
 #include "Client.h"
 
-Client::Client(std::string nom, std::string prenom)
-	:_nom(nom), _prenom(prenom)
+Client::Client(std::string nom, std::string prenom, int id)
+	:_nom(nom), _prenom(prenom), _id(id)
 {
 }
 
@@ -23,6 +23,11 @@ std::vector<Produit> Client::getpanier()
 std::vector<int> Client::getqtt()
 {
 	return _qtt;
+}
+
+int Client::getid()
+{
+	return _id;
 }
 
 void Client::addpanier(Produit prod, int qtt)

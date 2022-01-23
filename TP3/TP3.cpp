@@ -15,7 +15,7 @@ int main()
     magasin.update("Iphone 15", iphone15.getqtt()); //en plus il y a du stock !
     magasin.update("Twingo", twingo.getqtt());
     magasin.searchproduct("Iphone 15");
-    Client client1("Dubois", "Pierre");
+    Client client1("Dubois", "Pierre", 121212);
     client1.addpanier(iphone15, 1);
     client1.addpanier(twingo, 2);
     std::cout << client1;

@@ -9,7 +9,7 @@ std::string Magasin::getname()
 	return _name;
 }
 
-void Magasin::addproduct(Produit prod)
+void Magasin::addproduct(Produit &prod)
 {
 	_produit.push_back(prod);
 }
@@ -51,7 +51,7 @@ void Magasin::update(std::string name, int qtt)
 	}
 }
 
-void Magasin::addclient(Client client)
+void Magasin::addclient(Client &client)
 {
 	_clients.push_back(client);
 }

@@ -3,16 +3,17 @@
 #include <string>
 #include "Produit.h"
 #include "Client.h"
+#include "Commande.h"
 class Magasin
 {
 public:
 	Magasin(std::string name);
 	std::string getname();
-	void addproduct(Produit prod); //permet d'ajouter un produit
+	void addproduct(Produit &prod); //permet d'ajouter un produit
 	void display(); //permet d'afficher tout les produits
 	void searchproduct(std::string name); //permet de chercher un produit dans le magasin
 	void update(std::string name, int qtt); //permet de mettre a jour la quantitée d'un produit
-	void addclient(Client client);
+	void addclient(Client &client);
 	void dispclient(); //permet d'afficher tout les clients du magasin
 	void searchclient(std::string name); //permet de chercher un client du magasin par son nom ou son prénom
 	void addpanier(Produit produit, int qtt, Client &client); //permet d'ajouter un produit au panier d'un client (mais ca veut dire que le magasin peut faire acheter n'importe quoi a ces clients ???)
@@ -22,6 +23,6 @@ private:
 	std::string _name;
 	std::vector <Produit> _produit;
 	std::vector <Client> _clients;
-	//std::vector<Commande> _commandes;  // les tableaux ne sont pas ajoutés au debut car les classes produit client et commande n'existent pas encore*/
+	std::vector<Commande> _commandes;
 };
 
