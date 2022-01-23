@@ -46,7 +46,7 @@ La classe magasin permet de tout faire : elle permet de placer les produits dans
 - `addpanier(Produit produit, int quantite, Client client)` permet d'ajouter au panier d'un client un produit en une certaine quantité
 - `delprod(Produit produit, Client client)` permet de supprimer un produit du panier d'un client
 - `changeqtt(Produit produit, int quantite, Client client)` permet de modifier la quantité d'un produit dans le panier d'un client
-- `commander(Client client, int id)` permet de passer commande pour un client. Supprimme automatiquement son panier. Id correspond a l'identifiant unique de la commande
+- `commander(Client client, int id)` permet de passer commande pour un client. Supprime automatiquement son panier. Id correspond a l'identifiant unique de la commande
 - `statuscommande(int id, bool status)` permet de changer le status d'une commande d'identifiant "id". True correspond a "commande expédiée" et False correspond à "commande en préparation"
 - `dispcommandes()` permet d'afficher toutes les commandes du magasin (prètes ou non)
 - `commandesclient(int id)` permet d'afficher toutes les commandes du magasin correspondant au client d'identifiant "id"
