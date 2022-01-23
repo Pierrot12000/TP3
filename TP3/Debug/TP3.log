@@ -1,4 +1,10 @@
-﻿  Magasin.cpp
+﻿  Client.cpp
+C:\Users\Pierre\Desktop\TP3\TP3\Client.cpp(52,20): warning C4018: '<' : incompatibilité signed/unsigned
+C:\Users\Pierre\Desktop\TP3\TP3\Client.cpp(62,20): warning C4018: '<' : incompatibilité signed/unsigned
+C:\Users\Pierre\Desktop\TP3\TP3\Client.cpp(79,20): warning C4018: '<' : incompatibilité signed/unsigned
+  Commande.cpp
+C:\Users\Pierre\Desktop\TP3\TP3\Commande.cpp(40,20): warning C4018: '<' : incompatibilité signed/unsigned
+  Magasin.cpp
 C:\Users\Pierre\Desktop\TP3\TP3\Magasin.cpp(19,20): warning C4018: '<' : incompatibilité signed/unsigned
 C:\Users\Pierre\Desktop\TP3\TP3\Magasin.cpp(28,20): warning C4018: '<' : incompatibilité signed/unsigned
 C:\Users\Pierre\Desktop\TP3\TP3\Magasin.cpp(45,20): warning C4018: '<' : incompatibilité signed/unsigned
@@ -13,7 +19,9 @@ C:\Users\Pierre\Desktop\TP3\TP3\Magasin.cpp(154,20): warning C4018: '<' : incom
 C:\Users\Pierre\Desktop\TP3\TP3\Magasin.cpp(165,20): warning C4018: '<' : incompatibilité signed/unsigned
 C:\Users\Pierre\Desktop\TP3\TP3\Magasin.cpp(177,20): warning C4018: '<' : incompatibilité signed/unsigned
 C:\Users\Pierre\Desktop\TP3\TP3\Magasin.cpp(186,20): warning C4018: '<' : incompatibilité signed/unsigned
+  Produit.cpp
   TP3.cpp
 C:\Users\Pierre\Desktop\TP3\TP3\TP3.cpp(10,107): warning C4305: 'argument' : troncation de 'double' à 'float'
   Génération de code en cours...
+  LINK : C:\Users\Pierre\Desktop\TP3\TP3\Debug\TP3.exe introuvable ou non généré par la dernière édition de liens incrémentielle ; édition de liens complète en cours
   TP3.vcxproj -> C:\Users\Pierre\Desktop\TP3\TP3\Debug\TP3.exe

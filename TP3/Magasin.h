@@ -30,4 +30,3 @@ private:
 	std::vector <Commande> _commandes;
 	std::vector <int> _id; //tableau contenant les identifiants des clients
 };
-

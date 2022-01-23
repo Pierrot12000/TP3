@@ -24,4 +24,3 @@ private:
 	std::vector <Produit> _panier;
 	std::vector <int> _qtt; //tableau contenant les quantitées respectives de chaque produit du panier
 };
-

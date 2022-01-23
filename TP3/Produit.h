@@ -18,4 +18,3 @@ private:
 	int _qtt;
 	float _prix;
 };
-
