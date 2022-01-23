@@ -54,6 +54,7 @@ void Magasin::update(std::string name, int qtt)
 void Magasin::addclient(Client &client)
 {
 	_clients.push_back(client);
+	_id.push_back(client.getid());
 }
 
 void Magasin::dispclient()
@@ -65,15 +66,15 @@ void Magasin::dispclient()
 	}
 }
 
-void Magasin::searchclient(std::string name)
+void Magasin::searchclient(int id)
 {
 	bool z = false;
 	for (int a = 0; a < _clients.size(); a++)
 	{
-		if (_clients[a].getnom().compare(name) == 0 || _clients[a].getprenom().compare(name) == 0)
+		if (_id[a] == id) //si l'identifiant correspond a un enregistré dans le magasin
 		{
 			z = true;
-			std::cout << "Le client " << _clients[a].getnom() << " " << _clients[a].getprenom() << " fait bien parti du magasin" << std::endl;
+			std::cout << "Le client " << _clients[a].getnom() << " " << _clients[a].getprenom() << " fait bien parti du magasin" << std::endl; //on affiche le nom et le prénom du client correspondant a cet identifiant
 		}
 	}
 	if (z == false)
@@ -82,17 +83,112 @@ void Magasin::searchclient(std::string name)
 	}
 }
 
-void Magasin::addpanier(Produit produit, int qtt, Client &client)
+void Magasin::addpanier(Produit& produit, int qtt, Client &client)
 {
-	client.addpanier(produit, qtt);
+	bool z = false;
+	for (int a = 0; a < _produit.size(); a++)
+	{
+		if (_produit[a].getname().compare(produit.getname()) == 0)//on cherche dans notre tableau de produit le produit correspondant a celui demandé en comparant les nom
+		{
+			if (produit.getqtt() >= qtt)//si il y a asser de stocks
+			{
+				z = true;
+				client.addpanier(produit, qtt); //on ajoute le produit au panier
+				produit.setqtt(produit.getqtt() - qtt); //et on retire la quantité équivalente aux stocks
+			}
+
+		}
+	}
+	if (z == false)
+	{
+		std::cout << "Le produit que vous cherchez n'est pas dans le magasin ou est en rupture de stocks" << std::endl;
+	}
 }
 
-void Magasin::delprod(std::string name, Client &client)
+void Magasin::delprod(Produit& produit, Client &client)
 {
-	client.delprod(name);
+	for (int a = 0; a < _produit.size(); a++)
+	{
+		if (_produit[a].getname().compare(produit.getname()) == 0)//on cherche dans notre tableau de produit le produit correspondant a celui demandé en comparant les nom
+		{
+			for (int b = 0; b < client.getqtt().size(); b++)
+			{
+				if (client.getpanier()[b].getname().compare(produit.getname()) == 0) //en gros la on cherche a quelle emplacement du tableau du panier du client est situé le produit
+				{
+					_produit[a].setqtt(_produit[a].getqtt() + client.getqtt()[b]); //une fois l'emplacement trouvé (ici b), on ajoute aux stocks la quantité, puisque que le client n'en veux plus
+					client.delprod(client.getpanier()[b].getname());
+				}
+			}
+		}
+	}
 }
 
-void Magasin::changeqtt(std::string name, int qtt, Client &customer)
+void Magasin::changeqtt(Produit& produit, int qtt, Client &client)
 {
-	customer.changeqtt(name, qtt);
+	for (int a = 0; a < _produit.size(); a++)
+	{
+		if (_produit[a].getname().compare(produit.getname()) == 0)//on cherche dans notre tableau de produit le produit correspondant a celui demandé en comparant les nom
+		{
+			for (int b = 0; b < client.getqtt().size(); b++)
+			{
+				if (client.getpanier()[b].getname().compare(produit.getname()) == 0)
+				{
+					if (produit.getqtt() >= _produit[a].getqtt() + client.getqtt()[b] - qtt) //si il y a assez de stocks
+					{
+						_produit[a].setqtt(_produit[a].getqtt() + client.getqtt()[b] - qtt); //on ajoute l'ancienne valeur aux stocks et on enlève la nouvelle
+						client.changeqtt(client.getpanier()[b].getname(), qtt);
+					}
+					else
+					{
+						std::cout << "Le produit que vous cherchez n'est pas dans le magasin ou est en rupture de stocks" << std::endl;
+					}
+				}
+			}
+		}
+	}
+}
+
+void Magasin::commander(Client& client, int id)
+{
+	Commande commande(client, id); //on créer la commande du client
+	for (int a = 0; a < client.getpanier().size(); a++)
+	{
+		commande.addproduct(client.getpanier()[a], client.getqtt()[a]); //on rempli la commande avec les produits qui sont dans le panier du client
+	}
+	_commandes.push_back(commande); //on ajoute cette commande a la liste des commandes du magasin
+	client.delpanier(); //on vide le panier du client
+}
+
+void Magasin::statuscommande(int id, bool status)
+{
+	bool z = false;
+	for (int a = 0; a < _commandes.size(); a++)
+	{
+		if (_commandes[a].getid() == id)
+		{
+			z = true;
+			_commandes[a].setstatus(status);
+		}
+	}
+}
+
+void Magasin::dispcommandes()
+{
+	for (int a = 0; a < _commandes.size(); a++)
+	{
+		std::cout << "Identifiant de commande : " << _commandes[a].getid() << std::endl;
+		std::cout << _commandes[a] << std::endl;
+	}
+}
+
+void Magasin::commandesclient(int id)
+{
+	for (int a = 0; a < _commandes.size(); a++)
+	{
+		if (_commandes[a].getidclient() == id)
+		{
+			std::cout << "Identifiant de commande : " << _commandes[a].getid() << std::endl;
+			std::cout << _commandes[a] << std::endl;
+		}
+	}
 }

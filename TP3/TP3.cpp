@@ -16,15 +16,20 @@ int main()
     magasin.update("Twingo", twingo.getqtt());
     magasin.searchproduct("Iphone 15");
     Client client1("Dubois", "Pierre", 121212);
-    client1.addpanier(iphone15, 1);
-    client1.addpanier(twingo, 2);
     std::cout << client1;
 
     std::cout << std::endl;
 
     magasin.addclient(client1);
     magasin.dispclient();
-    magasin.changeqtt("Iphone 15", 3, client1);
-    magasin.delprod("Iphone 15", client1);
+    std::cout << std::endl;
+    magasin.addpanier(iphone15, 1, client1);
+    magasin.changeqtt(iphone15, 3, client1);
     std::cout << client1;
+    std::cout << std::endl;
+    magasin.commander(client1, 122837);
+    magasin.commandesclient(121212);
+    magasin.statuscommande(122837, true);
+    std::cout << std::endl;
+    magasin.commandesclient(121212);
 }
